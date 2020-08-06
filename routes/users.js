@@ -1,15 +1,16 @@
 var express = require("express");
 var router = express.Router();
 
-let usersController = require("../controllers/usersController")
+var usersController = require("../controllers/usersController")
+
+router.get('/',usersController.raiz)
+
+router.get('/usersTodos', usersController.usuarios);
+
+router.get('/totalUsers', usersController.cantidadUsuarios);
 
 
-
-router.get('/api/totalUsers', usersController.cantidadUsuarios);
-
-router.get('/api/users', usersController.usuarios);
-
-router.get('/api/users/:id', usersController.perfilUsuario);
+router.get('/:id', usersController.perfilUsuario);
 
 
 module.exports = router;

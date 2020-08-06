@@ -7,6 +7,10 @@ const { Sequelize } = require('../database/models/index.js');
 
 let usersController = {
 
+    raiz: (req, res) => {
+        res.send('Hola, busca la api que desees')
+    },
+
 
     cantidadUsuarios: (req, res) => {
 
